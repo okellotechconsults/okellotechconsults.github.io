@@ -26,6 +26,8 @@
    $("#signIn").click(function(){
     var email = $("#signInEmail").val();
     var password = $("#signInPassword").val();
+    $("#signInEmail").val() = "";
+    $("#signInPassword").val() = ""; 
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
   // Handle Errors here.
     var errorCode = error.code;
@@ -33,8 +35,7 @@
   // ...
 
     });
-    $("#signInEmail").val() = "";
-    $("#signInPassword").val() = "";
+    
 
   });
 
