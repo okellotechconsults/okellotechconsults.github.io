@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>errands form</title>
+	<link rel="stylesheet" type="text/css" href="w3.css">
+	<link rel="stylesheet" href="form.css">
+	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+	<div id="auth" class="box">
+		<h2>login</h2>
+		<form>
+			<div id="signUpDiv" style="display: none;">
+				<div class="inputBox">
+					<input type="text" id="email" required="">
+					<label>Email</label>
+				</div>
+				<div class="inputBox">
+					<input type="password" id="password" required="">
+					<label>password</label>
+				</div>
+				<input id="signUp" type="submit" value="Sign Up">
+			</div>
+
+
+			<div id="signInDiv">
+				<div class="inputBox">
+					<input type="text" id="signInEmail" required="">
+					<label>Email</label>
+				</div>
+				<div class="inputBox">
+					<input type="password" id="signInPassword" required="">
+					<label>password</label>
+				</div>
+				<input id="signIn" type="submit" value="Sign In">
+				<p id="signUpLink">Sign Up </p>
+			</div>
+
+
+		</form>
+		
+	</div>
+	<div id="signedIn">
+
+		<p>hello U are signed in</p>
+		<input id="signOut" type="submit" value="Sign Out">
+		
+	</div>
+
+
+
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
