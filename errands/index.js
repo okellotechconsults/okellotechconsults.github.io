@@ -33,6 +33,8 @@
   // ...
 
     });
+    $("#signInEmail").val() = "";
+    $("#signInPassword").val() = "";
 
   });
 
