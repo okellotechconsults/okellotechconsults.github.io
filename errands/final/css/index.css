@@ -1,0 +1,18 @@
+footer
+{
+  position: absolute;
+  bottom: 0;
+}
+#sign-up
+{
+  display: none;
+}
+#auth
+{
+    display: none;
+
+}
+#signed-in
+{
+  display: none;
+}

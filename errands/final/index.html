@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/Bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="jquery/jquery.js"></script>
+  </head>
+  <body>
+    <div id="auth" class="container">
+      <form id="sign-in">
+        <div class="form-group">
+          <label for="sign-in-email">Email address</label>
+          <input type="email" class="form-control" id="sign-in-email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="sign-in-password">Password</label>
+          <input type="password" class="form-control" id="sign-in-password" placeholder="Password">
+        </div>
+        <button  id="sign-in-btn" type="submit" class="btn btn-primary">Sign In</button>
+        <p>or <a id="sign-up-link" href="#">Sign Up</a> instead</p>
+      </form>
+
+      <form id="sign-up">
+        <div class="form-group">
+          <label for="sign-up-email">Email address</label>
+          <input type="email" class="form-control" id="sign-up-email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="sign-up-password">Password</label>
+          <input type="password" class="form-control" id="sign-up-password" placeholder="Password">
+        </div>
+        <button id="sign-up-btn" type="submit" class="btn btn-primary">Sign Up</button>
+        <p>already have an account <a id="sign-in-link" href="#">Sign In</a> instead</p>
+      </form>
+    </div>
+    <div id="signed-in">
+        <!--MENU-->
+      <div class="d-flex"></div>
+        <div class="btn-group">
+          <button id="reference" type="button" class="btn btn-secondary">menu</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="menu-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div id="menu"  class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <button id="sign-out-btn" type="button" class="btn btn-outline-dark">Sign Out</button>
+          </div>
+        </div>
+        <!--</div>-->
+          <!--MENU END-->
+        <!--BODY-->
+      <div class="container">
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane" id="order-ui" role="tabpanel" aria-labelledby="pills-home-tab">
+            <p>this is the order page</p>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Options</label>
+              </div>
+              <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="Public Relations">Public Relations</option>
+                <option value="Airport Shuttle">Airport Shuttle</option>
+                <option value="Delivery">Delivery</option>
+                <option value="Tours and Travel">Tours and Travel</option>
+              </select>
+            </div>
+
+
+
+          </div>
+          <div class="tab-pane" id="find-ui" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <p>this is the find page</p>
+          </div>
+          <div class="tab-pane" id="contact-ui" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <p>this is the contact page</p>
+          </div>
+        </div>
+      </div>
+        <!--BODY END-->
+
+      <footer>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link" id="order" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="find" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Find</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact Us</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
