@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+
+	<ul id="list">
+		<li class="element">abraham</li>
+		<li class="element">john</li>
+		<li class="element">james</li>
+	</ul>
+	search:
+	<input type="text" id="searchtext" />
+
+
+
+
+
+	<script src="jquery/jquery.js"></script>
+	<script>
+		
+
+		function contains(text_one, text_two){
+			if(text_one.indexOf(text_two) != -1)
+				return true;
+		}
+
+		$("searchtext").keyup(function(){
+			var searchtext =$("searchtext").val().toLowerCase()
+			$("ul li").each(function(){
+				if(!contains($(this).text().toLowerCase(), searchtext))
+					$(this).hide();
+				else
+					$(this).show();
+			})
+		});
+
+
+	</script>
+</body>
+</html>
