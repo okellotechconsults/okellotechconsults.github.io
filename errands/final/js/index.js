@@ -68,9 +68,7 @@ if (user) {
  var uid = user.uid;
  var providerData = user.providerData;
  // ...
- var none = "";
- $("#sign-in-email").val("");
- $("#sign-in-password").val("");
+
  console.log("U have successfully signed in");
  $("#signed-in").css("display", "block");
  $("#auth").css("display", "none");
@@ -102,6 +100,19 @@ $("#sign-in-btn").click(function(){
 // ...
 });
  });
+
+ //SIGNING IN WITH GOOGLE
+ var gprovider = new firebase.auth.GoogleAuthProvider();
+ $("#sign-in-with-google-btn").click(function(){
+   firebase.auth().signInWithRedirect(gprovider);
+ });
+//SIGNING IN WITH facebook
+
+var fbprovider = new firebase.auth.FacebookAuthProvider()
+$("#sign-in-with-facebook-btn").click(function(){
+  firebase.auth().signInWithRedirect(fbprovider);
+});
+
 
  //SIGNING OUT
  $("#sign-out-btn").click(function(){
