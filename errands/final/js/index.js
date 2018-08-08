@@ -86,6 +86,20 @@ if (user) {
 });
 
 
+//SIGNING UP
+
+$("#sign-up-btn").click(function(){
+  console.log("u have clicked sign up")
+    var email = $("#sign-up-email").val();
+    var password = $("#sign-up-password").val();
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
+  });
+
 //SIGNING IN
 $("#sign-in-btn").click(function(){
  var email = $("#sign-in-email").val();
