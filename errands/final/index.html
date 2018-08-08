@@ -10,10 +10,16 @@
     <script src="jquery/jquery.js"></script>
   </head>
   <body>
+    <header>
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+        </a>
+      </nav>
+    </header>
+
     <div id="auth" class="container">
-      <button  type="button" class="btn btn-primary btn-lg" name="button"><img src="assets/icons/Google.png" style="height:40px;, width:40px;"></img>sign in with google</button>
-      <a id="sign-in-with-facebook-btn" href="#" class="fa fa-facebook btn btn-outline-primary btn-lg">Sign in with facebook</a>
-      <a id="sign-in-with-google-btn" href="#" class="fa fa-google btn btn-outline-primary btn-lg"> Sign in with Google</a>
+      <br><br><br><br>
       <form id="sign-in">
         <div class="form-group">
           <label for="sign-in-email">Email address</label>
@@ -39,6 +45,7 @@
         <button id="sign-up-btn" type="submit" class="btn btn-primary">Sign Up</button>
         <p>already have an account <a id="sign-in-link" href="#">Sign In</a> instead</p>
       </form>
+      
     </div>
     <div id="signed-in">
         <!--MENU-->
