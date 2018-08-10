@@ -111,6 +111,7 @@ $("#sign-in-btn").click(function(){
  var errorCode = error.code;
  var errorMessage = error.message;
  console.log("error code: " + errorCode + " " + "error message: " + errorMessage)
+ alert("error code: " + errorCode + " " + "error message: " + errorMessage)
 // ...
 });
  });
