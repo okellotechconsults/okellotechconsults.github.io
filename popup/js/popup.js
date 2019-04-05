@@ -1,7 +1,3 @@
-//INSERT EXTERNAL CONTENT INTO THE TEST DIV
-
-
-
 
 //FIREBASE
 var config = {
@@ -13,6 +9,8 @@ var config = {
     messagingSenderId: "79860480110"
   };
   firebase.initializeApp(config);
+
+  console.log(firebase);
   
   //initialising the database
   var db = firebase.database().ref().child("uploads/posts");
