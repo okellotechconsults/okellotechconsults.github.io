@@ -9,4 +9,4 @@ var config = {
   };
   firebase.initializeApp(config);
 
-console.log(firebase);
+console.log(firebase)
