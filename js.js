@@ -1,4 +1,4 @@
-console.log("js.js is working");
+console.log("js.js is currently working");
 var config = {
     apiKey: "AIzaSyAvXeHz88xqwaFA8kB9PCK_A6aUDE14kOo",
     authDomain: "project-f7a5d.firebaseapp.com",
@@ -8,3 +8,5 @@ var config = {
     messagingSenderId: "79860480110"
   };
   firebase.initializeApp(config);
+
+console.log(firebase);
