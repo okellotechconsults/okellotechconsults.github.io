@@ -26,6 +26,9 @@ function uploadFile() {
     var storageRef = firebase.storage().ref('/pics' + fileName);
     var uploadTask = storageRef.put(selectedFile);
 
+
+
+
     uploadTask.on('state_changed',
         function (snapshot) {
 
@@ -35,8 +38,12 @@ function uploadFile() {
         },
         function () {
             // Upload completed successfully, now we can get the download URL
+
             uploadTask.snapshot.ref.getDownloadURL().then(function (url) {
-                console.log('File available at', url);
+
+                //initialising the database
+                var db = firebase.database().ref().child("uploads/files");
+                db.push().set(url);
             });
         });
 };

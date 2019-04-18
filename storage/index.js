@@ -27,9 +27,11 @@ fileUploader.addEventListener('change', function (e) {
     console.log("file has been captured")
     //GET FILE
     var file = e.target.files[0];
+    fileName = file.name;
+    console.log("new file name is ", fileName);
 
     //CREATE A STORAGE REFERENCE
-    var storageRef = firebase.storage().ref('pics/' + file.name);
+    var storageRef = firebase.storage().ref('pics/' + fileName);
 
     //UPLOAD FILE
     var task = storageRef.put(file);
@@ -47,12 +49,17 @@ fileUploader.addEventListener('change', function (e) {
         },
 
         function complete() {
-            var url = task.snapshot.downloadURL;
-            console.log(url);
-
-            // $("body").append(`
-            //     <p>you uploaded to ${url}</p>
-            // `)
+            
+            task.snapshot.ref.getDownloadURL().then(function (url) {
+                
+                console.log(url);
+                //initialising the database
+                var db = firebase.database().ref().child("uploads/files");
+                db.push().set(url.slice(0, -3));
+                $("body").append(`
+                    <p>you uploaded to ${url}</p>
+                `)
+            });
 
         }
 
