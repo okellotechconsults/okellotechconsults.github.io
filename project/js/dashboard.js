@@ -22,8 +22,8 @@ firebase.auth().onAuthStateChanged(function (user) {
         var providerData = user.providerData;
         console.log("u are signed in");
         $("#dashboard").show();
-        $("#uMail").text(email);
-        $("#uName").text(displayName)
+        $("#uMail").text(email + " - ");
+        $("#uName").text(displayName + " - ")
         var db = firebase.database().ref().child("uploads/posts");
         var fileUploader = document.getElementById("fileButton");
         $("#submit").click(function () {

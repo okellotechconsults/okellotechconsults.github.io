@@ -1,5 +1,5 @@
 //toggle menu
-$("#menu-toggle").click(function(e) {
+$("#menu-toggle").click(function (e) {
   e.preventDefault();
   $("#wrapper").toggleClass("toggled");
 });
@@ -25,9 +25,9 @@ db.on("child_added", snap => {
   var siteUrl = snap.child("siteUrl").val();
   var description = snap.child("description").val();
   var category = snap.child("category").val();
-  
-  if(siteUrl == ""){
-    console.log("the fileurl is ",url, "the site url is", siteUrl)
+
+  if (siteUrl == "") {
+    console.log("the fileurl is ", url, "the site url is", siteUrl)
     $("#searchResults").append(`
     <div class="list-group">
     <a target="_blank" href="${url}" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -40,8 +40,8 @@ db.on("child_added", snap => {
     </a>
     <div>
     `)
-  } else if(siteUrl != "") {
-    console.log("the file url is ",url, "the site url is", siteUrl)
+  } else if (siteUrl != "") {
+    console.log("the file url is ", url, "the site url is", siteUrl)
     $("#searchResults").append(`
     <div class="list-group">
     <a target="_blank" href="${siteUrl}" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -59,14 +59,14 @@ db.on("child_added", snap => {
 
   //list.js functions
   var options = {
-   valueNames: ['name', 'author']
+    valueNames: ['name', 'author']
   };
   var userList = new List('users', options)
 });
 
 //AUTHENTICATION
 //check authentication status
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
     var displayName = user.displayName;
@@ -77,15 +77,17 @@ firebase.auth().onAuthStateChanged(function(user) {
     var uid = user.uid;
     var providerData = user.providerData;
     console.log("signed in");
+    $("#uMail").text(email + " - ");
+    $("#uName").text(displayName + " - ")
 
     $("#authStatus").html("Hello " + displayName + " welcome");
     $("#signIn").hide();
-    $("#sidebarAuth").click(function signOut(){
+    $("#sidebarAuth").click(function signOut() {
       console.log("attempt to sign out");
-      firebase.auth().signOut().then(function() {
+      firebase.auth().signOut().then(function () {
         // Sign-out successful.
-        console,log("you have successfully signed out");
-      }).catch(function(error) {
+        console, log("you have successfully signed out");
+      }).catch(function (error) {
         // An error happened.
       });
     }
@@ -102,16 +104,16 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
- //google sign in on click
+//google sign in on click
 
- var provider = new firebase.auth.GoogleAuthProvider();
+var provider = new firebase.auth.GoogleAuthProvider();
 
- $("#signIn").click(function(){
-   //firebase signing in with google
-       firebase.auth().signInWithPopup(provider).then(result => {
-           const user = result.user;
-           console.log(user);
-   })
+$("#signIn").click(function () {
+  //firebase signing in with google
+  firebase.auth().signInWithPopup(provider).then(result => {
+    const user = result.user;
+    console.log(user);
+  })
 
 });
 
