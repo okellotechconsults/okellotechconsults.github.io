@@ -1,0 +1,19 @@
+.custom-file
+{
+    width: 30%;
+}
+#dashboard
+{
+    display: none;
+}
+.logo
+{
+    width: 40%;
+}
+#valid{
+    color: brown;
+}
+#siteUrlDiv
+{
+    /* display: none; */
+}

@@ -1,0 +1,40 @@
+/* .splogo
+{
+    height: 50px;
+}
+.close
+{
+    text-align: right;
+    padding: 5%;
+}
+.auth
+{
+    margin: auto;
+    margin-top: 5%;
+    width: 70%;
+    max-width: 700px;
+    border-width: 5px;
+    border-color: greenyellow;
+}
+#searchResults
+{
+    width: 70%;
+    margin: auto;
+} */
+.list{
+    margin:  0;
+    padding: 0;
+    list-style: none;
+}
+/* #users
+{
+    padding-top: 5%;
+} */
+#menu-toggle
+{
+    font-size: 200%;    
+}
+.logo
+{
+    width: 40%;
+}

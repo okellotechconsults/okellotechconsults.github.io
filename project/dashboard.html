@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PORTAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="css/materialize.min.css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="grey darken-3">
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right w-25 p-3" id="sidebar-wrapper">
+            <div class="text-center">
+                <img class="logo" src="./assets/BusitemaLogo.png" alt="BusitemaLogo">
+            </div>
+            <div class="sidebar-heading">Students Academic Resource Sharing Portal </div>
+            <div class="list-group list-group-flush">
+                <a id="sidebarDashboard" href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+                <a id="sidebarUpload" href="#" class="list-group-item list-group-item-action bg-light">Upload Resource</a>
+                <a id="sidebarProfile" href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+                <a id="sidebarAuth" href="#" class="list-group-item list-group-item-action bg-light">Sign out</a>
+                <a id="sidebarHelp" href="#" class="list-group-item list-group-item-action bg-light">Help</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <div id="dashboard" class="page-content-wrapper container">
+            <div class="d-flex">
+                <div>Email Address </div>
+                <div>User Name </div>
+            </div>
+            <div class="">
+
+                <br>
+                <div>
+                    <div disabled class="form-group">
+                        <label>Title</label>
+                        <input input type="text" name="title" id="title" placeholder="Title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select a Category</label>
+                        <select id="pri-cats" name="Category" class="form-control">
+                            <option value="Engineering">Engineering</option>
+                            <option value="Education">Education</option>
+                            <option value="Health Sciences">Health Sciences</option>
+                            <option value="Business And Economics">Business and Economics</option>
+                            <option value="Agriculture">Agriculture</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="description" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="custom-file">
+                        <input class="custom-file-input" type="file" name="" id="fileButton" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="fileButton">Choose file</label>
+                    </div>
+                    <div class="progress" style="height: 5px;">
+                        <div id="uploader" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p>Or upload URL instead</p>
+                    <div id="siteUrlDiv" disabled class="form-group">
+                        <input input type="text" name="title" id="siteUrl" placeholder="Paste web URL here" class="form-control">
+                    </div>
+                    <div id="valid"></div>
+                    <fieldset>
+                        <button id="submit" class="btn btn-outline-success">save</button>
+                    </fieldset>
+                </div>
+            </div>
+            <p id="success"></p>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/list.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
