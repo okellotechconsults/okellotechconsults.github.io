@@ -42,10 +42,18 @@ firebase.auth().onAuthStateChanged(function (user) {
                 description: description,
                 userId: uid
             }
-            db.push().set(data);
+            db.push().set(data).then(function () {
+                $("#siteUrl").val("");
+                $("#title").val("");
+                $("#description").val("");
+                alert("URL Successfully uploaded");
+            });
+
         });
         fileUploader.addEventListener('change', function (e) {
-            $("#submit").click(function () {
+            $("#submit").hide();
+            $("#submitFile").show();
+            $("#submitFile").click(function () {
                 console.log("clicked submit")
                 //GET ELEMENTS
                 var uploader = $("#uploader");
@@ -91,6 +99,10 @@ firebase.auth().onAuthStateChanged(function (user) {
                             $("#siteUrlDiv").append(`
                             <p>you uploaded to ${url}</p>
                             `)
+                            $("#siteUrl").val("");
+                            $("#title").val("");
+                            $("#description").val("");
+                            alert("File Successfully uploaded");
                         })
                     }
                 )
@@ -139,6 +151,7 @@ setInterval(function () {
     if (title.length < 5 || description.length < 15 || (file == "" && siteUrl == "")) {
         // console.log("title is null");
         $("#submit").attr("disabled", "");
+        $("#submitFile").attr("disabled", "");
         $("#valid").fadeIn();
         $("#valid").text("Title has to be at least 5 characters, Description at least 15 and a file or website address has to be chosen");
     } else if (siteUrl != "" && http === -1) {
@@ -149,6 +162,7 @@ setInterval(function () {
         // $("#submit").removeAttr("disabled");
         $("#valid").fadeOut();
         $("#submit").removeAttr("disabled");
+        $("#submitFile").removeAttr("disabled");
         // console.log("title is true");
     }
 }, 200)
